@@ -3,27 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook Message Sender</title>
+    <title>Portfolio - @ItxmeXaryab</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+            color: #333;
+            background-image: url('https://media.giphy.com/media/Q7Rl6ve8Ts5II/giphy.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            animation: elephant 20s linear infinite alternate;
+        }
+        @keyframes elephant {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(20px); }
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #555;
+        }
+        .bio {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .contact-info {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .contact-info a {
+            text-decoration: none;
+            color: #007bff;
+            margin-left: 5px;
+        }
+        .projects {
+            margin-bottom: 20px;
+        }
+        .project {
+            margin-bottom: 10px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .social-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
-    <h1>Facebook Message Sender</h1>
-    <form method="POST" enctype="multipart/form-data">
-        <label for="accessToken">Access Tokens (Multiple files allowed):</label><br>
-        <input type="file" id="accessToken" name="accessToken" multiple><br><br>
-        
-        <label for="threadId">Conversation ID:</label><br>
-        <input type="text" id="threadId" name="threadId" required><br><br>
-
-        <label for="senderName">Sender Name:</label><br>
-        <input type="text" id="senderName" name="senderName" required><br><br>
-
-        <label for="txtFile">Message File:</label><br>
-        <input type="file" id="txtFile" name="txtFile" required><br><br>
-
-        <label for="time">Time Interval (seconds):</label><br>
-        <input type="number" id="time" name="time" required><br><br>
-
-        <input type="submit" value="Send Messages">
-    </form>
+    <div class="container">
+        <div class="bio">
+            <h1>@ItxmeXaryab</h1>
+            <p>Rejection Is Redirection 👍</p>
+        </div>
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <div class="social-icons">
+                <div class="social-icon">
+                    <a href="https://www.facebook.com/OnireXargab" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook">
+                    </a>
+                </div>
+                <div class="social-icon">
+                    <a href="https://www.instagram.com/D0pexx.01/" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" alt="Instagram">
+                    </a>
+                </div>
+                <!-- Add more social icons -->
+            </div>
+        </div>
+        <div class="projects">
+            <h2>Post Servēr </h2>
+            <div class="project">
+                <h3>Blindex Post Server</h3>
+                <p>Available Free To Get Contact Me</p>
+            </div>
+            <div class="project">
+                <h3>Blindex Chat Server</h3>
+                <p>Web To Web Available Free</p>
+            </div>
+            <!-- Add more projects as needed -->
+        </div>
+    </div>
 </body>
 </html>
