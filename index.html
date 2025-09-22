@@ -1,93 +1,273 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="intro.css">
-    <title>Zaryab Khattak</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zaryab Khattak</title>
 
-<link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <!-- Boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
+  <style>
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff512f, #dd2476);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      color: #fff;
+      transition: background 0.5s;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    header {
+      width: 100%;
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .logo a {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+
+    ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: #eee;
+      font-weight: 500;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    ul li a:hover,
+    ul li a.active {
+      color: #fff;
+    }
+
+    ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #fff;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    ul li a:hover::after {
+      width: 100%;
+    }
+
+    .mode {
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    /* Hero Section */
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 0 8%;
+      gap: 50px;
+    }
+
+    .detail h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .detail h1 span {
+      color: #ffe259;
+      text-shadow: 0px 0px 10px rgba(255, 226, 89, 0.7);
+    }
+
+    .detail h3 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: #eee;
+    }
+
+    .detail p {
+      max-width: 500px;
+      margin-bottom: 25px;
+      line-height: 1.6;
+      color: #f5f5f5;
+    }
+
+    .btn button {
+      padding: 12px 28px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.4s;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Social Icons */
+    .social {
+      margin-bottom: 20px;
+    }
+
+    .social a {
+      display: inline-block;
+      margin-right: 15px;
+      font-size: 1.8rem;
+      color: #fff;
+      transition: 0.4s;
+    }
+
+    .social a:hover {
+      transform: scale(1.2) rotate(10deg);
+      color: #ffe259;
+    }
+
+    /* Image */
+    .img-sec img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    /* Dark Mode */
+    .dark-mode {
+      background: #1e1e1e;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      ul {
+        display: none;
+      }
+      .main {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <header class="container">
-        <div class="page-header">
-            <div class="logo">
-                <a href="#">ZaryabKhattak</a>
-            </div>
-            <input type="checkbox" id="click">
+  <header>
+    <div class="logo"><a href="#">ZaryabKhattak</a></div>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Skills</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <label class="mode">
+      <input type="checkbox" id="darkbtn" hidden>
+      <i class='bx bxs-moon'></i>
+    </label>
+  </header>
 
-            <label for="click" class="mainicon">
-                <div class="menu">
-                    <i class='bx bx-menu'></i>
-                </div>
-            </label>
-            <ul>
-                <li><a href="#"  class="active" style="--navAni:1">Home</a></li>
-                <li><a href="#" style="--navAni:2">About</a></li>
-                <li><a href="#" style="--navAni:3">Skills</a></li>
-                <li><a href="#" style="--navAni:4">Portfolio</a></li>
-                <li><a href="#" style="--navAni:5">Contact</a></li>
-            </ul>
-            <label class="mode">
-                <input type="checkbox" id="darkbtn">
-                <i class='bx bxs-moon'></i>
-            </label>
-        </div>
-    </header>
+  <section class="main">
+    <div class="detail">
+      <div class="social">
+        <a href="https://www.linkedin.com" target="_blank"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class='bx bxl-instagram'></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
+      </div>
+      <h1>Hi, I'm <span>ZARYAB KHATTAK</span></h1>
+      <h3>Creative Web Developer 🚀</h3>
+      <p>I'm passionate about building modern, interactive, and beautiful websites. Wanna connect?  
+        Check out my socials above 👆</p>
+      <div class="btn">
+        <button>Let’s Work Together</button>
+      </div>
+    </div>
+    <div class="img-sec">
+      <img src="1714400120405.jpg" alt="Profile Image">
+    </div>
+  </section>
 
+  <script>
+    const darkbtn = document.getElementById('darkbtn');
+    const body = document.body;
+    const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+    if (isDarkMode) {
+      body.classList.add('dark-mode');
+      darkbtn.checked = true;
+    }
 
-    <section class="container">
-        <div class="main">
-            
-<div class="social">
-    <a href="https://www.tiktok.com/@henriix.exe" style="--socialAni:1"><i class='bx bxl-linkedin'></i></a>
-    <a href="https://www.instagram.com/henriix.exe" style="--socialAni:2"><i class='bx bxl-instagram'></i></a>
-    <a href="https://www.facebook.com/sadessticx" style="--socialAni:4"><i class='bx bxl-facebook-circle'></i></a>
-</div>
-
-            <div class="detail">
-                <h1>Hi, I'm <span>ZARYAB KHATTAK</span></h1>
-                <h3> Web Developer <3 </h3>
-                <p> Yeah !! This Is Zaryab.Hope You're Well ? Wanna Contact Me Then Click The Links
-Above <3 </p>
-                <div class="btn">
-                    <button>I'm The Best</button>
-                </div>
-                
-            </div>
-            <div class="img-sec">
-                <div class="images">
-                    <img src="1714400120405.jpg" alt="" class="img-w">
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <script>
-                const darkbtn = document.getElementById('darkbtn');
-        const body = document.body;
-        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
-        if (isDarkMode) {
-            body.classList.add('dark-mode');
-            darkbtn.checked = true;
-        }
-
-        darkbtn.addEventListener('change', () => {
-            if (darkbtn.checked) {
-                body.classList.add('dark-mode');
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                body.classList.remove('dark-mode');
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        });
-    </script>
+    darkbtn.addEventListener('change', () => {
+      if (darkbtn.checked) {
+        body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'disabled');
+      }
+    });
+  </script>
 </body>
 
 </html>
